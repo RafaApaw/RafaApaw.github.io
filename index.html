@@ -3,92 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio Saya - [Nama Kamu]</title>
+    <title>Portofolio Istimewa - [Nama Anda]</title>
     <style>
+        /* Variabel Warna */
+        :root {
+            --bg-color: #1a1a2e; /* Biru Tua/Ungu Gelap */
+            --text-color: #e4e4e4;
+            --accent-color: #ff6a6a; /* Merah Muda Cerah */
+            --card-color: #2c2c44;
+            --shadow-color: rgba(0, 0, 0, 0.4);
+        }
+
+        /* RESET & Dasar */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #ff9999;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* HEADER & HERO */
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #3a3a5a 100%);
+            padding: 100px 20px;
             text-align: center;
         }
-        .header {
-            background-color: #333;
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 5px;
             color: white;
-            padding: 20px;
+            animation: fadeInDown 1s ease-out;
         }
-        .header h1 {
-            margin: 0;
+        .hero p {
+            font-size: 1.5em;
+            color: #c0c0d0;
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+            opacity: 0;
         }
-        .content {
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .section {
-            background-color: white;
-            padding: 20px;
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid var(--accent-color);
+            object-fit: cover;
             margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            text-align: left;
+        }
+
+        /* SECTION UTAMA */
+        .section {
+            padding: 60px 0;
+        }
+        .section h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 40px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+        }
+
+        /* FLEXBOX UNTUK PROYEK */
+        .projects-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
         }
         .project-card {
-            border: 1px solid #ccc;
-            padding: 15px;
-            margin-top: 10px;
-            border-radius: 5px;
+            background-color: var(--card-color);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            padding: 20px;
+            width: 100%;
+            max-width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px var(--accent-color);
         }
         .project-card h3 {
+            color: var(--accent-color);
             margin-top: 0;
-            color: #007bff;
         }
-        .contact a {
-            color: #007bff;
-            text-decoration: none;
-            margin-right: 15px;
+
+        /* Keahlian (Skills) */
+        .skills-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .skill-item {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid var(--card-color);
+            color: #c0c0d0;
+        }
+
+        /* Animasi */
+        @keyframes fadeInDown {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>[Nama Lengkap Kamu]</h1>
-        <p>Pengembang Web | Desainer Grafis | [Keahlian Lain]</p>
+    <div class="hero">
+        <h1>Saya [Nama Lengkap Anda]</h1>
+        <p>Menciptakan Solusi Digital yang Berdampak | [Titel Profesionalmu]</p>
     </div>
 
-    <div class="content">
-        <div class="section">
+    <div class="container">
+
+        <div class="section" id="about">
             <h2>Tentang Saya</h2>
-            <p>Halo! Saya adalah seorang [Profesi/Titel]. Saya bersemangat dalam [Minat Utama, contoh: membuat antarmuka pengguna yang bersih dan fungsional]. Saya menguasai HTML, CSS, JavaScript, dan [Sebutkan Teknologi Lain]. Mari berkolaborasi!</p>
+            <p style="text-align: center;">Saya adalah seorang *[Sebutkan Profesi, cth: Backend Developer/UI UX Designer]* dengan [Jumlah] tahun pengalaman. Saya berfokus pada [Nilai Jual Utama, cth: kecepatan dan arsitektur kode yang bersih]. Portofolio ini adalah bukti gairah saya untuk teknologi dan desain.</p>
         </div>
 
-        <div class="section">
-            <h2>Proyek Pilihan</h2>
-            
-            <div class="project-card">
-                <h3>Proyek 1: Aplikasi To-Do List Sederhana</h3>
-                <p>Aplikasi web menggunakan **HTML, CSS, dan JavaScript** murni untuk mengelola daftar tugas harian. Fitur utama: penyimpanan lokal dan filter status.</p>
-                <a href="#">Lihat Demo</a> | <a href="[Link Repo GitHub Proyek 1]">Kode GitHub</a>
+        <div class="section" id="skills">
+            <h2>Keahlian Utama</h2>
+            <ul class="skills-list">
+                <li class="skill-item">HTML5 / CSS3</li>
+                <li class="skill-item">JavaScript (ES6+)</li>
+                <li class="skill-item">React / Next.js</li>
+                <li class="skill-item">Node.js / Python</li>
+                <li class="skill-item">Figma / Sketch</li>
+                <li class="skill-item">Git / GitHub</li>
+                <li class="skill-item">[Keahlian Paling Langka]</li>
+            </ul>
+        </div>
+
+        <div class="section" id="projects">
+            <h2>Proyek Istimewa</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <h3>[Proyek 1]: Aplikasi E-Commerce X</h3>
+                    <p style="font-size: 0.9em; color: #a0a0b0;">Mengembangkan *frontend* yang responsif. **Dampak: Meningkatkan konversi sebesar 12%**.</p>
+                    <p style="font-size: 0.8em; color: var(--accent-color);">Stack: React, Redux, Sass</p>
+                    <a href="[Link Live Demo Proyek 1]" target="_blank">LIHAT LIVE</a>
+                    <a href="[Link GitHub Proyek 1]" target="_blank">KODE</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>[Proyek 2]: Sistem Manajemen Data</h3>
+                    <p style="font-size: 0.9em; color: #a0a0b0;">Mendesain dan mengimplementasikan API menggunakan Python. **Dampak: Menghemat waktu input data 8 jam/minggu**.</p>
+                    <p style="font-size: 0.8em; color: var(--accent-color);">Stack: Python (Flask), PostgreSQL, Docker</p>
+                    <a href="[Link Live Demo Proyek 2]" target="_blank">LIHAT LIVE</a>
+                    <a href="[Link GitHub Proyek 2]" target="_blank">KODE</a>
+                </div>
+
+                <div class="project-card">
+                    <h3>[Proyek 3]: Portofolio Desainer</h3>
+                    <p style="font-size: 0.9em; color: #a0a0b0;">Website satu halaman yang unik dengan animasi scroll. **Dampak: Menarik 5 klien baru dalam sebulan**.</p>
+                    <p style="font-size: 0.8em; color: var(--accent-color);">Stack: HTML5, Pure CSS, GSAP</p>
+                    <a href="[Link Live Demo Proyek 3]" target="_blank">LIHAT LIVE</a>
+                    <a href="[Link GitHub Proyek 3]" target="_blank">KODE</a>
+                </div>
             </div>
+        </div>
 
-            <div class="project-card">
-                <h3>Proyek 2: Website Bisnis Fiktif</h3>
-                <p>Website responsif 5 halaman yang dirancang menggunakan **Bootstrap**. Fokus pada desain minimalis dan performa cepat.</p>
-                <a href="#">Lihat Demo</a> | <a href="[Link Repo GitHub Proyek 2]">Kode GitHub</a>
+        <div class="section" id="contact">
+            <h2>Ayo Berkolaborasi!</h2>
+            <div style="text-align: center;">
+                <a href="mailto:emailmu@example.com" style="margin: 0 15px; font-size: 1.2em;">Email</a>
+                <a href="[Link LinkedIn]" target="_blank" style="margin: 0 15px; font-size: 1.2em;">LinkedIn</a>
+                <a href="https://github.com/usernameanda" target="_blank" style="margin: 0 15px; font-size: 1.2em;">GitHub</a>
             </div>
-
-            <p>Lihat lebih banyak proyek di halaman GitHub saya!</p>
         </div>
-        
-        <div class="section contact">
-            <h2>Hubungi Saya</h2>
-            <p>Email: <a href="mailto:emailmu@example.com">emailmu@example.com</a></p>
-            <p>LinkedIn: <a href="[Link LinkedIn]">/in/namakamu</a></p>
-            <p>GitHub: <a href="https://github.com/usernameanda">/usernameanda</a></p>
-        </div>
+    </div>
 
+    <div class="footer">
+        Dibuat dengan 🔥 | Dihosting GRATIS di GitHub Pages
     </div>
 
 </body>
